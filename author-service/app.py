@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import mysql.connector
 
 db = mysql.connector.connect(
@@ -26,6 +26,10 @@ def show(id):
 
 @app.route('/', methods=['POST'])
 def create():
-  return jsonify({'message': 'ini post req untuk create an author'})
+  author = request.get_json()
+  cursor = db.cursor(dictionary=True)
+  query = 'INSERT INTO authors (name, city, state) VALUES ("%s", "%s", "%s")' % (author['name'], author['city'], author['state'])
+  cursor.execute(query)
+  return jsonify({'message': 'success', 'data': author})
 
 app.run(port=8000)
