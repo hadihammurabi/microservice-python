@@ -24,4 +24,8 @@ def show(id):
   authors = cursor.fetchall()
   return jsonify(authors[0])
 
+@app.route('/', methods=['POST'])
+def create():
+  return jsonify({'message': 'ini post req untuk create an author'})
+
 app.run(port=8000)
