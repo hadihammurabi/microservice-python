@@ -5,7 +5,7 @@ app = Flask('order-service')
 @app.route('/')
 def index():
   return jsonify({
-    'message': 'order',
+    'message': 'get all orders',
   })
 
 app.run(port=8003)
