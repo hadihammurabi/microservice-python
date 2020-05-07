@@ -23,4 +23,5 @@ def index():
     tmp.append(book)
   return jsonify(tmp)
 
-app.run(port=8001)
+if __name == "__main__":
+  app.run(port=8001)

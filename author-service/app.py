@@ -32,4 +32,5 @@ def create():
   cursor.execute(query)
   return jsonify({'message': 'success', 'data': author})
 
-app.run(port=8000)
+if __name == "__main__":
+  app.run(port=8000)

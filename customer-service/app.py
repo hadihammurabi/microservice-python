@@ -8,4 +8,5 @@ def index():
     'message': 'customer',
   })
 
-app.run(port=8002)
+if __name == "__main__":
+  app.run(port=8002)
