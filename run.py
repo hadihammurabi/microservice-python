@@ -16,7 +16,7 @@ application = DispatcherMiddleware(
 try:
   run_simple(
     application=application,
-    hostname='localhost',
+    hostname='0.0.0.0',
     port=8080,
     use_reloader=True,
     use_debugger=True
