@@ -5,8 +5,8 @@ app = Flask('customer-service')
 @app.route('/')
 def index():
   return jsonify({
-    'message': 'customer',
+    'message': 'get all customers',
   })
 
-if __name == "__main__":
+if __name__ == '__main__':
   app.run(port=8002)
