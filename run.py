@@ -7,10 +7,10 @@ from customer_service.app import app as customer_service
 from order_service.app import app as order_service
 
 application = DispatcherMiddleware(
-    author_service, {
-    '/book': book_service,
-    '/customer': customer_service,
-    '/order': order_service,
+    book_service, {
+    '/authors': author_service,
+    '/customers': customer_service,
+    '/orders': order_service,
 })
 
 try:
